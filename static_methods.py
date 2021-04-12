@@ -18,24 +18,24 @@ class Employee:
     def apply_raise(self):
         self.pay = int(self.pay * self.raise_amt)
 
-    @classmethod
-    def set_raise_amt(cls, amount):
-        cls.raise_amt = amount
+    
+    def set_raise_amt(self, amount):
+        self.raise_amt = amount
 
-    @classmethod
-    def from_string(cls, emp_str):
+    
+    def from_string(self, emp_str):
         first, last, pay = emp_str.split('-')
-        return cls(first, last, pay)
+        return self(first, last, pay)
 
-    @staticmethod
-    def is_workday(day):
+   
+    def is_workday(self,day):
         if day.weekday() == 5 or day.weekday() == 6:
             return False
         return True
 
 
-emp_1 = Employee('Corey', 'Schafer', 50000)
-emp_2 = Employee('Test', 'Employee', 60000)
+emp_1 = Employee('007', 'Bond', 100)
+emp_2 = Employee('Test', 'Employee', 50)
 
 Employee.set_raise_amt(1.05)
 
@@ -43,9 +43,9 @@ print(Employee.raise_amt)
 print(emp_1.raise_amt)
 print(emp_2.raise_amt)
 
-emp_str_1 = 'John-Doe-70000'
-emp_str_2 = 'Steve-Smith-30000'
-emp_str_3 = 'Jane-Doe-90000'
+emp_str_1 = '007'
+emp_str_2 = 'Bond'
+emp_str_3 = 'James'
 
 first, last, pay = emp_str_1.split('-')
 
@@ -56,6 +56,6 @@ print(new_emp_1.email)
 print(new_emp_1.pay)
 
 import datetime
-my_date = datetime.date(2016, 7, 11)
+my_date = datetime.date(2020, 7, 11)
 
 print(Employee.is_workday(my_date))
