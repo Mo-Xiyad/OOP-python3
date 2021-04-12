@@ -17,7 +17,7 @@
 class Dog():
     def __init__(self,breed,name):
         self.breed = breed
-        slef.name = name
+        self.name = name
 
 lotta = Dog(breed='Labrador Retriever', name="Milly")
 
